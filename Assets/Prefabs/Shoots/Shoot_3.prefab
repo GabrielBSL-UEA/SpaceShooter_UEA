@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6250447041263492700}
   - component: {fileID: 6250447041263492702}
   - component: {fileID: 1425007884822892688}
+  - component: {fileID: 45224533849964183}
   m_Layer: 0
   m_Name: Shoot_3
   m_TagString: Shoot
@@ -131,3 +132,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &45224533849964183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6250447041263492701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f933c2fe81e9e8f4f95c55e3ea1b02aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  lifeTime: 5
+  damage: 5
+  rb: {fileID: 1425007884822892688}

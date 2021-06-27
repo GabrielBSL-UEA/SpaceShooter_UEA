@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
-public class Player : MonoBehaviour
+public class Player : GameEntity, IHittable
 {
     private enum AnimList
     {
@@ -20,9 +20,6 @@ public class Player : MonoBehaviour
     {
         public GameObject shootObj;
         public float timeBetweenShots;
-        public float shootVelocity;
-        public float shootLifetime;
-        public float shootDamage;
     }
 
     public Shoot[] weaponList;
@@ -38,7 +35,6 @@ public class Player : MonoBehaviour
     
     private PlayerInputs inputActions;
     private Vector2 moveDirection;
-    private Rigidbody2D rb;
     private BoxCollider2D boxCol;
 
     private Vector3 bottomLeft;
@@ -46,9 +42,9 @@ public class Player : MonoBehaviour
     private Rect cameraRect;
 
     // Start is called before the first frame update
-    void Awake()
+    protected override void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        base.Awake();
         anim = GetComponent<Animator>();
         boxCol = GetComponent<BoxCollider2D>();
 
@@ -75,15 +71,8 @@ public class Player : MonoBehaviour
         );
     }
 
-    private void OnEnable()
-    {
-        inputActions.Enable();
-    }
-
-    private void OnDisable()
-    {
-        inputActions.Disable();
-    }
+    private void OnEnable() => inputActions.Enable();
+    private void OnDisable() => inputActions.Disable();
 
     private void Update()
     {
@@ -132,10 +121,6 @@ public class Player : MonoBehaviour
     private void ShootAction()
     {
         GameObject newShot = Instantiate(weaponList[currentWeapon].shootObj, shotSpawnPoint.position, shotSpawnPoint.rotation);
-        newShot.TryGetComponent(out Rigidbody2D shootRb);
-        print(newShot.name);
-        shootRb.AddForce(Vector3.up * weaponList[currentWeapon].shootVelocity, ForceMode2D.Impulse);
-        Destroy(newShot, weaponList[currentWeapon].shootLifetime);
     }
 
     private void ChangeWeapon(bool right)
@@ -144,5 +129,11 @@ public class Player : MonoBehaviour
 
         if (currentWeapon >= weaponList.Length) currentWeapon = 0;
         else if (currentWeapon < 0) currentWeapon = weaponList.Length - 1;
+    }
+
+    public void RegisterHit()
+    {
+        GameManager.Instance.InstantiateSpaceship(3);
+        DestroyObject();
     }
 }

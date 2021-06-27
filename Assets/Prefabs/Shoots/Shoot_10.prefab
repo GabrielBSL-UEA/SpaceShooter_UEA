@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6107717104767144747}
   - component: {fileID: 1277422712911830501}
   - component: {fileID: 9216535762395875041}
+  - component: {fileID: -521177660930987153}
   m_Layer: 0
   m_Name: Shoot_10
   m_TagString: Shoot
@@ -151,3 +152,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-521177660930987153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6107717104767144744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f933c2fe81e9e8f4f95c55e3ea1b02aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  lifeTime: 5
+  damage: 5
+  rb: {fileID: 1277422712911830501}
