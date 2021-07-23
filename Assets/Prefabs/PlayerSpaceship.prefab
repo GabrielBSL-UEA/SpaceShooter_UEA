@@ -152,6 +152,24 @@ MonoBehaviour:
   weaponList:
   - shootObj: {fileID: 3108977056096146871, guid: 22d104b1d9231ee4e87f11542e1c2c21, type: 3}
     timeBetweenShots: 0.2
+  - shootObj: {fileID: 7805939239603935603, guid: 78f12bc5a985f544b815890dabf21513, type: 3}
+    timeBetweenShots: 0.3
+  - shootObj: {fileID: 6250447041263492701, guid: fb6fb4272a741ad458cc19d309240667, type: 3}
+    timeBetweenShots: 0.5
+  - shootObj: {fileID: 1833212697330053630, guid: a2bc017b4220a4d4dab5be71a171f219, type: 3}
+    timeBetweenShots: 0.15
+  - shootObj: {fileID: 2339984283106522601, guid: 55dff9773888c05418ee1a684b590cfd, type: 3}
+    timeBetweenShots: 0.3
+  - shootObj: {fileID: 6126763887567503772, guid: c131e0d195fe4ed49b7319b39ccfc99c, type: 3}
+    timeBetweenShots: 0.35
+  - shootObj: {fileID: 4245119645644324084, guid: 21bf4cd39135e0c49bb17e60d0f6a945, type: 3}
+    timeBetweenShots: 0.45
+  - shootObj: {fileID: 4461333513127448435, guid: e8c09b1732a10324db49b1925798802e, type: 3}
+    timeBetweenShots: 0.1
+  - shootObj: {fileID: 2857800069862676882, guid: 498c47be69af7cd49b1fbc40557c2a72, type: 3}
+    timeBetweenShots: 0.7
+  - shootObj: {fileID: 6107717104767144744, guid: 88b20059537441844933d8698bcc78f8, type: 3}
+    timeBetweenShots: 1
   velocity: 5
   shotSpawnPoint: {fileID: 241856074804647096}
 --- !u!61 &241856075983848389

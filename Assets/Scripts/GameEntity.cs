@@ -15,6 +15,5 @@ public class GameEntity : MonoBehaviour
     public virtual void DestroyObject()
     {
         Instantiate(explosionVFX, transform.position, Quaternion.identity);
-        Destroy(gameObject);
     }
 }
